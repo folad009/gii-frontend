@@ -1,0 +1,146 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * GII Learning Management System — design system
+ * Palette derived from the Global Impact Church mark:
+ * navy, magenta, teal, lime — on warm paper surfaces.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-magenta: var(--magenta);
+  --color-teal: var(--teal);
+  --color-lime: var(--lime);
+  --color-lime-ink: var(--lime-ink);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+
+  --color-chart-1: var(--navy);
+  --color-chart-2: var(--teal);
+  --color-chart-3: var(--magenta);
+  --color-chart-4: var(--lime);
+  --color-chart-5: var(--ink-soft);
+
+  --color-sidebar: var(--surface);
+  --color-sidebar-foreground: var(--ink);
+  --color-sidebar-primary: var(--navy);
+  --color-sidebar-primary-foreground: var(--paper);
+  --color-sidebar-accent: var(--muted);
+  --color-sidebar-accent-foreground: var(--ink);
+  --color-sidebar-border: var(--line);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --paper: oklch(0.962 0.014 84.5);
+  --surface: oklch(0.985 0.008 88);
+  --line: oklch(0.9 0.017 82);
+
+  --ink: oklch(0.255 0.075 285);
+  --ink-soft: oklch(0.52 0.035 285);
+
+  --navy: oklch(0.35 0.145 283);
+  --navy-deep: oklch(0.255 0.12 283);
+  --magenta: oklch(0.575 0.24 355);
+  --teal: oklch(0.62 0.104 185);
+  --lime: oklch(0.8 0.16 116);
+  --lime-ink: oklch(0.48 0.11 116);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--navy);
+  --primary-foreground: oklch(0.985 0.008 88);
+  --secondary: oklch(0.94 0.014 84);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.94 0.014 84);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--magenta);
+  --accent-foreground: oklch(0.985 0.008 88);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.985 0.008 88);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--navy);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+}
+
+@utility brand-rule {
+  background-image: linear-gradient(
+    to right,
+    var(--color-magenta),
+    var(--color-lime) 33%,
+    var(--color-teal) 66%,
+    var(--color-navy)
+  );
+}
